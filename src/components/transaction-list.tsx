@@ -1,9 +1,9 @@
 "use client";
-import Text from "@/components/text";
+import { formatDate } from "@/lib/formatters";
+import { Transaction } from "@/types/Transaction";
 
 import TransactionListItem from "@/components/transaction-list-item";
-import { Transaction } from "@/types/Transaction";
-import dayjs from "dayjs";
+import Text from "@/components/text";
 
 interface TransactionListProps {
   transactions: Transaction[];
@@ -14,7 +14,7 @@ export default function TransactionList({
 }: TransactionListProps) {
   const groupedByMonthTransactions = Object.groupBy(
     transactions,
-    ({ createdAt }) => dayjs(createdAt).format("MMMM")
+    ({ createdAt }) => formatDate("MMMM", createdAt)
   );
 
   return (

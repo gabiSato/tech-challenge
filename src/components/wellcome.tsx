@@ -1,12 +1,12 @@
 "use client";
 import { useState } from "react";
-import dayjs from "dayjs";
+
+import { formatDate, formatToCurrency } from "@/lib/formatters";
+import { Account } from "@/types/Account";
+import { User } from "@/types/User";
 
 import WellcomeCard from "@/components/wellcome-card";
 import Text from "@/components/text";
-
-import { Account } from "@/types/Account";
-import { User } from "@/types/User";
 
 import EyeIcon from "../../public/icons/eye.svg";
 import EyeClosedIcon from "../../public/icons/eye-closed.svg";
@@ -21,11 +21,8 @@ export default function Wellcome({ user, account }: WellcomeProps) {
 
   const firstName = user?.name?.split(" ")[0];
   const accountBalance = (account?.balanceInCents || 0) / 100;
-  const accountBalanceFormatted = accountBalance.toLocaleString("pt-BR", {
-    style: "currency",
-    currency: "BRL",
-  });
-  const currentDateFormatted = dayjs().format("dddd, DD/MM/YYYY");
+  const accountBalanceFormatted = formatToCurrency(accountBalance);
+  const currentDateFormatted = formatDate("dddd, DD/MM/YYYY");
 
   const toggleBalanceVisibility = () => {
     setShowBalance((prevValue) => !prevValue);

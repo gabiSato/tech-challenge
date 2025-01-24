@@ -1,8 +1,9 @@
 "use client";
 import { Transaction } from "@/types/Transaction";
 import Text from "@/components/text";
-import dayjs from "dayjs";
 import Link from "next/link";
+
+import { formatDate, formatToCurrency } from "@/lib/formatters";
 
 interface TransactionListItemProps {
   transaction: Transaction;
@@ -11,12 +12,8 @@ interface TransactionListItemProps {
 export default function TransactionListItem({
   transaction,
 }: TransactionListItemProps) {
-  const formattedDate = dayjs(transaction?.createdAt).format("DD/MM");
+  const formattedDate = formatDate("DD/MM", transaction?.createdAt);
   const amount = transaction?.amountInCents / 100;
-  const formattedAmount = amount.toLocaleString("pt-BR", {
-    style: "currency",
-    currency: "BRL",
-  });
   const isNegative = transaction?.transactionType === "WITHDRAWAL";
 
   return (
@@ -31,7 +28,7 @@ export default function TransactionListItem({
 
         <Text size="sm" color="cyan-100" weight="semibold">
           {isNegative && "-"}
-          {formattedAmount}
+          {formatToCurrency(amount)}
         </Text>
       </Link>
 

@@ -1,12 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { ToastContainer } from "react-toastify";
-import dayjs from "dayjs";
-import "dayjs/locale/pt-br";
 
 import "./globals.css";
-
-dayjs.locale("pt-br");
 
 const inter = Inter({
   variable: "--font-inter",
@@ -25,10 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased`}>
-        {children}
-        <ToastContainer />
-      </body>
+      <body className={`${inter.variable} antialiased`}>{children}</body>
     </html>
   );
 }

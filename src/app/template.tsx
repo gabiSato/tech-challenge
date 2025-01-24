@@ -1,10 +1,12 @@
+import { ToastContainer } from "react-toastify";
+
 import { UserAccountProvider } from "@/contexts/user-account-context";
+import { getUserAccount } from "@/actions";
 
 import Container from "@/components/container";
 import Sidebar from "@/components/sidebar";
 import Header from "@/components/header";
 import Navbar from "@/components/navbar";
-import { getUserAccount } from "@/actions";
 
 export default async function Template({
   children,
@@ -28,6 +30,8 @@ export default async function Template({
           </div>
         </main>
       </Container>
+
+      <ToastContainer />
     </UserAccountProvider>
   );
 }

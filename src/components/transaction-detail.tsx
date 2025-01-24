@@ -1,15 +1,15 @@
 "use client";
 import { useRouter } from "next/navigation";
-import dayjs from "dayjs";
+import { toast } from "react-toastify";
 
+import { formatDate, formatToCurrency } from "@/lib/formatters";
 import { deleteTransaction } from "@/actions";
+import { Transaction } from "@/types/Transaction";
 
 import Text from "@/components/text";
 
 import PencilIcon from "../../public/icons/pencil.svg";
 import TrashIcon from "../../public/icons/trash.svg";
-import { Transaction } from "@/types/Transaction";
-import { toast } from "react-toastify";
 
 export default function TransactionDetail({
   transaction,
@@ -18,12 +18,11 @@ export default function TransactionDetail({
 }) {
   const router = useRouter();
 
-  const formattedCreatedAt = dayjs(transaction?.createdAt).format("DD/MM/YYYY");
+  const formattedCreatedAtDate = formatDate(
+    "DD/MM/YYYY",
+    transaction?.createdAt
+  );
   const amount = transaction?.amountInCents / 100;
-  const formattedAmount = amount.toLocaleString("pt-BR", {
-    style: "currency",
-    currency: "BRL",
-  });
 
   const handleDelete = () => {
     deleteTransaction(transaction.id)
@@ -43,7 +42,7 @@ export default function TransactionDetail({
             Detalhe da transação {transaction?.id}
           </Text>
           <Text size="xs" color="neutral-400">
-            Criada em {formattedCreatedAt}
+            Criada em {formattedCreatedAtDate}
           </Text>
         </div>
 
@@ -79,7 +78,7 @@ export default function TransactionDetail({
           <Text size="sm">Valor</Text>
 
           <Text size="sm" weight="semibold" color="cyan-200">
-            {formattedAmount}
+            {formatToCurrency(amount)}
           </Text>
         </div>
       </div>
