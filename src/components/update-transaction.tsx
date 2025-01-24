@@ -1,27 +1,19 @@
 "use client";
-import { toast } from "react-toastify";
+import { Transaction, TransactionFormData } from "@/types/Transaction";
+import { useTransaction } from "@/hooks/useTransaction";
 
-import { updateTransaction } from "@/actions";
-import { Transaction } from "@/types/Transaction";
-
+import TransactionForm from "@/components/transaction-form";
 import Text from "@/components/text";
-import TransactionForm, {
-  TransactionData,
-} from "@/components/transaction-form";
 
 export default function UpdateTransaction({
   transaction,
 }: {
   transaction: Transaction;
 }) {
-  const handleSubmit = (data: TransactionData) => {
-    return updateTransaction(transaction.id, data)
-      .then(() => {
-        toast.success("Transação atualizada com sucesso!");
-      })
-      .catch(() => {
-        toast.error("Não foi possível editar a transação.");
-      });
+  const { updateTransaction } = useTransaction();
+
+  const handleSubmit = (data: TransactionFormData) => {
+    return updateTransaction(transaction.id, data);
   };
 
   return (

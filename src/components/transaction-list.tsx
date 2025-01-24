@@ -1,25 +1,35 @@
 "use client";
-import { formatDate } from "@/lib/formatters";
+import { useEffect, useState } from "react";
+
+import { useUserAccount } from "@/hooks/useUserAccount";
 import { Transaction } from "@/types/Transaction";
+import { formatDate } from "@/lib/formatters";
 
 import TransactionListItem from "@/components/transaction-list-item";
 import Text from "@/components/text";
 
-interface TransactionListProps {
-  transactions: Transaction[];
-}
+export default function TransactionList() {
+  const { transactions } = useUserAccount();
 
-export default function TransactionList({
-  transactions,
-}: TransactionListProps) {
-  const groupedByMonthTransactions = Object.groupBy(
-    transactions,
-    ({ createdAt }) => formatDate("MMMM", createdAt)
-  );
+  const [transactionsGroupedByMonth, setTransactionsGroupedByMonth] = useState<
+    Partial<Record<string, Transaction[]>>
+  >({});
+
+  useEffect(() => {
+    console.log("context", transactions);
+    if (transactions.length) {
+      const groupedTransactions = Object.groupBy(
+        transactions,
+        ({ createdAt }) => formatDate("MMMM", createdAt)
+      );
+
+      setTransactionsGroupedByMonth(groupedTransactions);
+    }
+  }, [transactions]);
 
   return (
     <div className="flex flex-col gap-8">
-      {Object.entries(groupedByMonthTransactions).map(
+      {Object.entries(transactionsGroupedByMonth).map(
         ([month, transactions]) => (
           <div key={month}>
             <Text

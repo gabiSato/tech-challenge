@@ -2,23 +2,17 @@
 import { FormEvent, useState } from "react";
 import { CurrencyInput } from "react-currency-mask";
 
+import { Transaction, TransactionFormData } from "@/types/Transaction";
 import { useTransactionForm } from "@/hooks/useTransactionForm";
-import { Transaction, TransactionType } from "@/types/Transaction";
 
 import Select from "@/components/select";
 import Input from "@/components/input";
 import Button from "@/components/button";
 import Text from "@/components/text";
 
-export type TransactionData = {
-  transactionType: TransactionType;
-  description: string;
-  amountInCents: number;
-};
-
 interface TransactionFormProps {
   transaction?: Transaction;
-  onSubmit: (data: TransactionData) => Promise<void>;
+  onSubmit: (data: TransactionFormData) => Promise<void>;
   shouldReset?: boolean;
 }
 

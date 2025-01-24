@@ -1,4 +1,4 @@
-import { Transaction } from "@/types/Transaction";
+import { Transaction, TransactionFormData } from "@/types/Transaction";
 import { ChangeEvent, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
@@ -46,7 +46,7 @@ export function useTransactionForm(transaction?: Transaction) {
         : "WITHDRAWAL",
       description: transactionType,
       amountInCents: amount * 100,
-    };
+    } as TransactionFormData;
   };
 
   useEffect(() => {

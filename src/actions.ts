@@ -1,4 +1,5 @@
 "use server";
+import { revalidatePath } from "next/cache";
 import { notFound } from "next/navigation";
 
 import {
@@ -20,14 +21,6 @@ export async function getUserAccount(userEmail: string) {
   return user;
 }
 
-export async function getAccountTransactions(accountId: number) {
-  const transactions = await transactionService.getTransactionsByAccounId(
-    accountId
-  );
-
-  return transactions;
-}
-
 export async function getTransaction(transactionId: number) {
   const transaction = await transactionService.getById(transactionId);
 
@@ -38,6 +31,10 @@ export async function getTransaction(transactionId: number) {
 
 export async function createTransaction(transactionData: CreateTransactionDTO) {
   const transaction = await transactionService.create(transactionData);
+
+  if (transaction) {
+    revalidatePath("/");
+  }
 
   return transaction;
 }
@@ -51,9 +48,15 @@ export async function updateTransaction(
     transactionData
   );
 
+  if (transaction) {
+    revalidatePath("/");
+  }
+
   return transaction;
 }
 
 export async function deleteTransaction(transactionId: number) {
   await transactionService.delete(transactionId);
+
+  revalidatePath("/");
 }

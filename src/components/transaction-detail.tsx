@@ -1,9 +1,8 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { toast } from "react-toastify";
 
 import { formatDate, formatToCurrency } from "@/lib/formatters";
-import { deleteTransaction } from "@/actions";
+import { useTransaction } from "@/hooks/useTransaction";
 import { Transaction } from "@/types/Transaction";
 
 import Text from "@/components/text";
@@ -16,6 +15,7 @@ export default function TransactionDetail({
 }: {
   transaction: Transaction;
 }) {
+  const { deleteTransaction } = useTransaction();
   const router = useRouter();
 
   const formattedCreatedAtDate = formatDate(
@@ -26,9 +26,7 @@ export default function TransactionDetail({
   const isNegative = transaction?.transactionType === "WITHDRAWAL";
 
   const handleDelete = () => {
-    deleteTransaction(transaction.id)
-      .then(() => router.replace("/"))
-      .catch(() => toast.error("Não foi possível excluir a transação"));
+    deleteTransaction(transaction.id).then(() => router.replace("/"));
   };
 
   const redirectToEditPage = () => {

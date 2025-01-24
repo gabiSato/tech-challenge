@@ -2,15 +2,8 @@
 import Text from "@/components/text";
 
 import TransactionList from "@/components/transaction-list";
-import { Transaction } from "@/types/Transaction";
 
-interface TransactionHistoryProps {
-  transactions: Transaction[];
-}
-
-export default function TransactionHistory({
-  transactions,
-}: TransactionHistoryProps) {
+export default function TransactionHistory() {
   return (
     <div className="bg-neutral-100 rounded px-36 lg:px-24 pt-32 lg:pt-24 pb-[42px]">
       <div className="sm:w-[232px] sm:mx-auto">
@@ -24,7 +17,7 @@ export default function TransactionHistory({
           Extrato
         </Text>
 
-        <TransactionList transactions={transactions} />
+        <TransactionList />
       </div>
     </div>
   );

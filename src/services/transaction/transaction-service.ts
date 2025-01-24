@@ -23,8 +23,4 @@ export class TransactionService {
   async delete(id: number): Promise<void> {
     return this.repository.delete(id);
   }
-
-  async getTransactionsByAccounId(accountId: number): Promise<Transaction[]> {
-    return this.repository.listByAccountId(accountId);
-  }
 }

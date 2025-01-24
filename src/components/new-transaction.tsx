@@ -1,28 +1,12 @@
 "use client";
-import { toast } from "react-toastify";
-
-import { useUserAccount } from "@/hooks/useUserAccount";
-import { createTransaction } from "@/actions";
+import { useTransaction } from "@/hooks/useTransaction";
 
 import TransactionCard from "@/components/transaction-card";
-import TransactionForm, {
-  TransactionData,
-} from "@/components/transaction-form";
+import TransactionForm from "@/components/transaction-form";
 import Text from "@/components/text";
 
-export default function NewTransaction({ accountId }: { accountId: number }) {
-  const { updateTransactionList } = useUserAccount();
-
-  const handleSubmit = (data: TransactionData) => {
-    return createTransaction({ ...data, accountId: accountId })
-      .then(() => {
-        updateTransactionList();
-        toast.success("Transação criada com sucesso!");
-      })
-      .catch(() => {
-        toast.error("Não foi possível cadastrar a transação.");
-      });
-  };
+export default function NewTransaction() {
+  const { createTransaction } = useTransaction();
 
   return (
     <TransactionCard>
@@ -30,7 +14,7 @@ export default function NewTransaction({ accountId }: { accountId: number }) {
         Nova transação
       </Text>
 
-      <TransactionForm onSubmit={handleSubmit} shouldReset />
+      <TransactionForm onSubmit={createTransaction} shouldReset />
     </TransactionCard>
   );
 }

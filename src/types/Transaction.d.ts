@@ -9,3 +9,9 @@ export type Transaction = {
   createdAt: Date;
   updatedAt: Date;
 };
+
+export type TransactionFormData = {
+  description: string;
+  amountInCents: number;
+  transactionType: TransactionType;
+};

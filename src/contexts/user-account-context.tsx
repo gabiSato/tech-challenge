@@ -4,14 +4,13 @@ import { createContext, useEffect, useState } from "react";
 import { User } from "@/types/User";
 import { Account } from "@/types/Account";
 import { Transaction } from "@/types/Transaction";
-import { getAccountTransactions } from "@/actions";
 
 interface UserAccountContext {
   pending: boolean;
   user: User | null;
   account: Account | null;
   transactions: Transaction[];
-  updateTransactionList(): void;
+  setTransactions(transactions: Transaction[]): void;
 }
 
 export const UserAccountContext = createContext<UserAccountContext | undefined>(
@@ -39,17 +38,13 @@ export const UserAccountProvider = ({
     }
   }, [userData]);
 
-  function updateTransactionList() {
-    if (!account?.id) return;
-
-    getAccountTransactions(account?.id).then((transactions) => {
-      setTransactions(transactions);
-    });
-  }
+  useEffect(() => {
+    console.log("context", transactions);
+  }, [transactions]);
 
   return (
     <UserAccountContext.Provider
-      value={{ pending, user, account, transactions, updateTransactionList }}
+      value={{ pending, user, account, transactions, setTransactions }}
     >
       {children}
     </UserAccountContext.Provider>

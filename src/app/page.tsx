@@ -6,7 +6,7 @@ import Wellcome from "@/components/wellcome";
 import { useUserAccount } from "@/hooks/useUserAccount";
 
 export default function Page() {
-  const { pending, user, account, transactions } = useUserAccount();
+  const { pending, user, account } = useUserAccount();
 
   return pending ? (
     <Loader className="absolute top-[calc(50%_-_16px)] left-[calc(50%_-_16px)]" />
@@ -18,12 +18,12 @@ export default function Page() {
         </section>
 
         <section>
-          <NewTransaction accountId={account!.id} />
+          <NewTransaction />
         </section>
       </div>
 
       <section>
-        <TransactionHistory transactions={transactions} />
+        <TransactionHistory />
       </section>
     </>
   );

@@ -26,11 +26,4 @@ export class TransactionRepository implements ITransactionRepository {
   async delete(id: number): Promise<void> {
     await prisma.transaction.delete({ where: { id } });
   }
-
-  async listByAccountId(accountId: number): Promise<Transaction[]> {
-    return await prisma.transaction.findMany({
-      where: { accountId },
-      orderBy: { createdAt: "desc" },
-    });
-  }
 }

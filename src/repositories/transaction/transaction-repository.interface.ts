@@ -5,7 +5,6 @@ export interface ITransactionRepository {
   getById(id: number): Promise<Transaction | null>;
   update(id: number, data: UpdateTransactionDTO): Promise<Transaction>;
   delete(id: number): Promise<void>;
-  listByAccountId(accountId: number): Promise<Transaction[]>;
 }
 
 export interface CreateTransactionDTO {
