@@ -1,25 +1,27 @@
-## Como rodar a aplicação
+# Tech Challenge fase 1
 
-### Levante serviço do banco de dados
+### Como rodar a aplicação
+
+1. Levante serviço do banco de dados
 
 `docker compose up -d`
 
-### Verifique se o serviço foi criado corretamente
+2. Verifique se o serviço foi criado corretamente
 
 `docker compose ps`
 
-### Instale as dependências
+3. Instale as dependências
 
 `yarn install`
 
-### Popule o banco de dados
+4. Popule o banco de dados
 
 `yarn seed`
 
-### Rode a aplicação
+5. Levante o servidor
 
 `yarn dev`
 
-### Abra o storybook
+### Como abrir o storybook
 
 `yarn storybook`
