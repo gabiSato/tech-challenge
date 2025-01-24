@@ -23,6 +23,7 @@ export default function TransactionDetail({
     transaction?.createdAt
   );
   const amount = transaction?.amountInCents / 100;
+  const isNegative = transaction?.transactionType === "WITHDRAWAL";
 
   const handleDelete = () => {
     deleteTransaction(transaction.id)
@@ -37,7 +38,7 @@ export default function TransactionDetail({
   return (
     <div className="max-w-[360px]">
       <div className="flex gap-32 mb-32 justify-between">
-        <div className="flex flex-col gap-8 mb-32">
+        <div className="flex flex-col gap-8">
           <Text as="h1" size="lg" weight="semibold">
             Detalhe da transação {transaction?.id}
           </Text>
@@ -78,6 +79,7 @@ export default function TransactionDetail({
           <Text size="sm">Valor</Text>
 
           <Text size="sm" weight="semibold" color="cyan-200">
+            {isNegative && "-"}
             {formatToCurrency(amount)}
           </Text>
         </div>
