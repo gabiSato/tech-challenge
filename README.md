@@ -1,6 +1,6 @@
 # Tech Challenge fase 1
 
-### Como rodar a aplicação
+## Como rodar a aplicação
 
 1. Levante serviço do banco de dados
 
@@ -22,6 +22,11 @@
 
 `yarn dev`
 
-### Como abrir o storybook
+## Como abrir o storybook
 
 `yarn storybook`
+
+## Vídeo de apresentação
+
+https://github.com/user-attachments/assets/c6fa74c4-4d50-428f-a94f-935a60fa5898
+
