@@ -1,0 +1,84 @@
+import {
+  Meta,
+  Typeset,
+  ColorPalette,
+  ColorItem,
+  Story,
+} from "@storybook/blocks";
+
+<Meta title="Theme" />
+
+# Theme
+
+## Typography
+
+**Font:** Inter
+
+**Weights:** 100(thin), 400(regular), 600(semibold), 700(bold)
+
+<Typeset
+  fontSizes={["13px", "16px", "18px", "20px", "25px", "31px"]}
+  fontWeight={"700"}
+  sampleText={"Lorem ipsum dolor sit amet, consectetur adipiscing elit."}
+  fontFamily={"Inter"}
+/>
+
+## Colors
+
+<ColorPalette>
+  <ColorItem
+    title="White and Black"
+    colors={{ white: "#FFFFFF", black: "#000000" }}
+  />
+  <ColorItem
+    title="Neutral"
+    colors={{
+      "neutral-100": "#f5f5f5",
+      "neutral-200": "#F8F8F8",
+      "neutral-300": "#CBCBCB",
+      "neutral-400": "#8B8B8B",
+      "neutral-500": "#444444",
+    }}
+  />
+  <ColorItem
+    title="Orange"
+    colors={{
+      "orange-100": "#FF5031",
+    }}
+  />
+  <ColorItem
+    title="Green"
+    colors={{
+      "green-100": "#E4EDE3",
+      "green-200": "#47A138",
+    }}
+  />
+  <ColorItem
+    title="Cyan"
+    colors={{
+      "cyan-100": "#DEE9EA",
+      "cyan-200": "#024D60",
+      "cyan-300": "#004D61",
+    }}
+  />
+</ColorPalette>
+
+## Spacing
+
+| Token | Value |
+| ----- | ----- |
+| 0     | 0px   |
+| 6     | 6px   |
+| 8     | 8px   |
+| 12    | 12px  |
+| 16    | 16px  |
+| 18    | 18px  |
+| 20    | 20px  |
+| 24    | 24px  |
+| 32    | 32px  |
+| 34    | 34px  |
+| 36    | 36px  |
+| 38    | 38px  |
+| 40    | 40px  |
+| 48    | 48px  |
+| 60    | 60px  |
