@@ -18,6 +18,13 @@ export default function TransactionDetail({
 }) {
   const router = useRouter();
 
+  const formattedCreatedAt = dayjs(transaction?.createdAt).format("DD/MM/YYYY");
+  const amount = transaction?.amountInCents / 100;
+  const formattedAmount = amount.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  });
+
   const handleDelete = () => {
     deleteTransaction(transaction.id)
       .then(() => router.replace("/"))
@@ -36,7 +43,7 @@ export default function TransactionDetail({
             Detalhe da transação {transaction?.id}
           </Text>
           <Text size="xs" color="neutral-400">
-            Criada em {dayjs(transaction?.createdAt).format("DD/MM/YYYY")}
+            Criada em {formattedCreatedAt}
           </Text>
         </div>
 
@@ -72,7 +79,7 @@ export default function TransactionDetail({
           <Text size="sm">Valor</Text>
 
           <Text size="sm" weight="semibold" color="cyan-200">
-            {transaction?.amountInCents}
+            {formattedAmount}
           </Text>
         </div>
       </div>
