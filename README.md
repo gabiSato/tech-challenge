@@ -4,27 +4,51 @@
 
 1. Levante serviço do banco de dados
 
-`docker compose up -d`
+```
+docker compose up -d
+```
 
 2. Verifique se o serviço foi criado corretamente
 
-`docker compose ps`
+```
+docker compose ps
+```
 
 3. Instale as dependências
 
-`yarn install`
+```
+yarn install
+```
 
-4. Popule o banco de dados
+4. Copie o arquivo env
 
-`yarn seed`
+```
+cp .env.sample .env
+```
 
-5. Levante o servidor
+5. Execute a primeira migração do banco de dados
 
-`yarn dev`
+```
+npx prisma migrate dev --name init
+```
+
+6. Popule o banco de dados
+
+```
+yarn seed
+```
+
+7. Levante o servidor
+
+```
+yarn dev
+```
 
 ## Como abrir o storybook
 
-`yarn storybook`
+```
+yarn storybook
+```
 
 ## Vídeo de apresentação
 
