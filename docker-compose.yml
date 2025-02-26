@@ -1,15 +1,42 @@
 services:
-  postgres:
+  postgres_db:
     image: postgres:15
-    container_name: tech-challenge
-    environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: techchallenge
+    hostname: postgres_db
+    container_name: postgres_db
+    restart: always
+    networks:
+      - db-server
     ports:
       - "5432:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - db_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: postgres
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin -d postgres"]
+      interval: 5s
+      timeout: 2s
+      retries: 20
+
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tech_challenge_server
+    networks:
+      - db-server
+    ports:
+      - "3000:3000"
+    depends_on:
+      postgres_db:
+        condition: service_healthy
+    env_file:
+      - .env
+
+networks:
+  db-server: {}
 
 volumes:
-  postgres_data:
+  db_data: {}
