@@ -1,16 +1,24 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @theme {
   --font-*: initial;
   --font-sans: Inter, Inter Fallback;
 
   --text-*: initial;
-  --text-xs: 13px, 0.983rem;
-  --text-sm: 16px, 1.21rem;
-  --text-md: 18px, 1.736rem;
-  --text-lg: 20px, 1.5125rem;
-  --text-xl: 25px, 1.891rem;
-  --text-2xl: 31px, 2.345rem;
+  --text-xs: 13px;
+  --text-xs--line-height: 0.983rem;
+  --text-sm: 16px;
+  --text-sm--line-height: 1.21rem;
+  --text-md: 18px;
+  --text-md--line-height: 1.736rem;
+  --text-lg: 20px;
+  --text-lg--line-height: 1.5125rem;
+  --text-xl: 25px;
+  --text-xl--line-height: 1.891rem;
+  --text-2xl: 28px;
+  --text-2xl--line-height: 2.135rem;
+  --text-3xl: 31px;
+  --text-3xl--line-height: 2.345rem;
 
   --color-*: initial;
   --color-white: #ffffff;
@@ -46,6 +54,8 @@
   --spacing-38: 38px;
   --spacing-40: 40px;
   --spacing-48: 48px;
+  --spacing-52: 52px;
+  --spacing-56: 56px;
   --spacing-60: 60px;
 
   --radius: 8px;
@@ -56,9 +66,11 @@
 @utility container {
   margin-inline: auto;
   padding-inline: 24px;
+
   @media (width >= --theme(--breakpoint-sm)) {
     max-width: none;
   }
+
   @media (width >= 1200px) {
     max-width: 1200px;
     padding-inline: 0px;

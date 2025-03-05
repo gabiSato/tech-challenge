@@ -59,7 +59,7 @@ export default function Wellcome({ user, account }: WellcomeProps) {
           <div className="flex flex-col gap-8">
             <Text color="white">Conta corrente</Text>
 
-            <Text size="2xl" color="white">
+            <Text size="3xl" color="white">
               {showBalance ? accountBalanceFormatted : "********"}
             </Text>
           </div>
