@@ -28,10 +28,10 @@ export default function WellcomeCard({ children }: WellcomeCardProps) {
         height={141.54}
       />
 
-      <div className="relative w-full z-[1]">{children}</div>
+      <div className="relative w-full z-1">{children}</div>
 
       <Image
-        className="relative z-[1] lg:hidden"
+        className="relative z-1 lg:hidden"
         src={manWithSafeImage}
         alt="Homem sentando em cima de um cofre"
         width={283}

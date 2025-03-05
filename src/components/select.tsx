@@ -36,7 +36,7 @@ export default function Select<TValue extends string | number>({
   return (
     <div className={clsx("relative", className)}>
       <button
-        className="w-full relative h-48 px-8 md:px-16 bg-white border border-cyan-300 rounded z-[1] flex items-center gap-16 justify-between"
+        className="w-full relative h-48 px-8 md:px-16 bg-white border border-cyan-300 rounded z-1 flex items-center gap-16 justify-between"
         role="combobox"
         aria-controls="select-content"
         aria-expanded={open}

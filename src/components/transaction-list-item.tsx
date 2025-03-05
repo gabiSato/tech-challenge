@@ -19,7 +19,7 @@ export default function TransactionListItem({
   return (
     <li className="group py-8 flex gap-18">
       <Link
-        className="flex flex-col w-full pb-16 group-[&:not(:last-of-type)]:border-b group-[&:not(:last-of-type)]:border-b-cyan-300/80 hover:underline decoration-cyan-100"
+        className="flex flex-col w-full pb-16 group-not-last-of-type:border-b group-not-last-of-type:border-b-cyan-300/80 hover:underline decoration-cyan-100"
         href={`/transaction/${transaction.id}`}
       >
         <Text size="sm" color="cyan-100">

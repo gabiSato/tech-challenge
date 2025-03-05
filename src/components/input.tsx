@@ -8,7 +8,7 @@ export default function Input({
   return (
     <input
       className={clsx(
-        "h-48 px-16 w-[250px] bg-white border border-cyan-300 rounded-lg outline-none text-sm text-neutral-500 placeholder:text-neutral-500",
+        "h-48 px-16 w-[250px] bg-white border border-cyan-300 rounded-lg outline-hidden text-sm text-neutral-500 placeholder:text-neutral-500",
         className
       )}
       {...props}

@@ -39,7 +39,7 @@ export default function NavigationMenu() {
           <li className="group">
             <CustomLink
               href="/"
-              className="block pb-16 mb-16 text-center group-[&:not(:last-of-type)]:border-b border-b-black"
+              className="block pb-16 mb-16 text-center group-not-last-of-type:border-b border-b-black"
               textSize="md"
               textColor="black"
               textWeight="regular"
@@ -54,7 +54,7 @@ export default function NavigationMenu() {
           <li className="group">
             <CustomLink
               href="/transferencias"
-              className="block pb-16 mb-16 text-center group-[&:not(:last-of-type)]:border-b border-b-black"
+              className="block pb-16 mb-16 text-center group-not-last-of-type:border-b border-b-black"
               textSize="md"
               textColor="black"
               textWeight="regular"
@@ -69,7 +69,7 @@ export default function NavigationMenu() {
           <li className="group">
             <CustomLink
               href="/investimentos"
-              className="block pb-16 mb-16 text-center group-[&:not(:last-of-type)]:border-b border-b-black"
+              className="block pb-16 mb-16 text-center group-not-last-of-type:border-b border-b-black"
               textSize="md"
               textColor="black"
               textWeight="regular"
@@ -84,7 +84,7 @@ export default function NavigationMenu() {
           <li className="group">
             <CustomLink
               href="/outros-servicos"
-              className="block pb-16 mb-16 text-center group-[&:not(:last-of-type)]:border-b border-b-black"
+              className="block pb-16 mb-16 text-center group-not-last-of-type:border-b border-b-black"
               textSize="md"
               textColor="black"
               textWeight="regular"

@@ -28,10 +28,10 @@ export default function TransactionCard({ children }: TransactionCardProps) {
         height={177.47}
       />
 
-      <div className="relative z-[1]">{children}</div>
+      <div className="relative z-1">{children}</div>
 
       <Image
-        className="relative sm:absolute sm:bottom-24 sm:right-24 w-full mt-38 sm:w-[327.82px] lg:hidden z-[1]"
+        className="relative sm:absolute sm:bottom-24 sm:right-24 w-full mt-38 sm:w-[327.82px] lg:hidden z-1"
         src={womanWithCardImage}
         alt="Mulher carregando cartão de crédito"
         width={280}
