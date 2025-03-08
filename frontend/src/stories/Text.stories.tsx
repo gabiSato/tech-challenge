@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import Text, { TextColor, TextSize, TextWeight } from "@/components/text";
 
-const sizes: TextSize[] = ["2xl", "xl", "lg", "md", "sm", "xs"];
+const sizes: TextSize[] = ["3xl", "2xl", "xl", "lg", "md", "sm", "xs"];
 const colors: TextColor[] = [
   "white",
   "black",
