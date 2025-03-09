@@ -77,6 +77,48 @@
   }
 }
 
+@utility text-xs-* {
+  font-size: var(--text-xs);
+  line-height: var(--text-xs--line-height);
+  font-weight: --value(--font-weight- *);
+}
+
+@utility text-sm-* {
+  font-size: var(--text-sm);
+  line-height: var(--text-sm--line-height);
+  font-weight: --value(--font-weight- *);
+}
+
+@utility text-md-* {
+  font-size: var(--text-md);
+  line-height: var(--text-md--line-height);
+  font-weight: --value(--font-weight- *);
+}
+
+@utility text-lg-* {
+  font-size: var(--text-lg);
+  line-height: var(--text-lg--line-height);
+  font-weight: --value(--font-weight- *);
+}
+
+@utility text-xl-* {
+  font-size: var(--text-xl);
+  line-height: var(--text-xl--line-height);
+  font-weight: --value(--font-weight- *);
+}
+
+@utility text-2xl-* {
+  font-size: var(--text-2xl);
+  line-height: var(--text-2xl--line-height);
+  font-weight: --value(--font-weight- *);
+}
+
+@utility text-3xl-* {
+  font-size: var(--text-3xl);
+  line-height: var(--text-3xl--line-height);
+  font-weight: --value(--font-weight- *);
+}
+
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
   so we've added these compatibility styles to make sure everything still
@@ -95,12 +137,7 @@
   }
 }
 
-:root {
-  --background: #e4ede3;
-  --foreground: #000000;
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
+  background: var(--color-green-100);
+  color: var(--color-black);
 }

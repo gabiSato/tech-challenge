@@ -11,7 +11,7 @@ export default function footer() {
       <Container>
         <div className="flex justify-between">
           <div className="">
-            <h3 className="text-sm font-bold mb-16">Serviços</h3>
+            <h3 className="text-sm-bold mb-16">Serviços</h3>
 
             <ul className="flex flex-col gap-16">
               <li>
@@ -27,7 +27,7 @@ export default function footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-bold mb-16">Contato</h3>
+            <h3 className="text-sm-bold mb-16">Contato</h3>
 
             <ul className="flex flex-col gap-16">
               <li>0800 004 250 08</li>
@@ -37,7 +37,7 @@ export default function footer() {
           </div>
 
           <div className="flex flex-col gap-24 items-center">
-            <h3 className="text-sm font-bold">Desenvolvido por Alura</h3>
+            <h3 className="text-sm-bold">Desenvolvido por Alura</h3>
 
             <div>
               <LogoImage className="h-32" />
