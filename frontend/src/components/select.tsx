@@ -43,7 +43,7 @@ export default function Select<TValue extends string | number>({
         type="button"
         onClick={handleClick}
       >
-        <Text className="pointer-events-none" size="sm" color="neutral-500">
+        <Text className="pointer-events-none" size="sm" color="neutral-600">
           {options.find((option) => option.value === value)?.label ||
             placeholder}
         </Text>

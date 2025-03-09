@@ -28,7 +28,8 @@
   --color-neutral-200: #f8f8f8;
   --color-neutral-300: #cbcbcb;
   --color-neutral-400: #8b8b8b;
-  --color-neutral-500: #444444;
+  --color-neutral-500: #767676;
+  --color-neutral-600: #444444;
 
   --color-orange-100: #ff5031;
 
@@ -57,10 +58,19 @@
   --spacing-52: 52px;
   --spacing-56: 56px;
   --spacing-60: 60px;
+  --spacing-72: 72px;
 
   --radius: 8px;
 
   --animate-spin: 0.75s linear infinite spin;
+}
+
+:root {
+  --gradient-green: linear-gradient(
+    180deg,
+    var(--color-cyan-300) 0%,
+    var(--color-white) 100%
+  );
 }
 
 @utility container {
@@ -117,6 +127,10 @@
   font-size: var(--text-3xl);
   line-height: var(--text-3xl--line-height);
   font-weight: --value(--font-weight- *);
+}
+
+@utility bg-linear-green {
+  background: var(--gradient-green);
 }
 
 /*

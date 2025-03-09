@@ -7,10 +7,10 @@ import YoutubeIcon from "../../public/icons/youtube.svg";
 
 export default function footer() {
   return (
-    <div className="bg-black pt-40 pb-52 text-white">
+    <div className="bg-black py-24 md:pt-40 md:pb-52 text-white">
       <Container>
-        <div className="flex justify-between">
-          <div className="">
+        <div className="flex flex-col gap-32 sm:flex-row sm:justify-between">
+          <div>
             <h3 className="text-sm-bold mb-16">Serviços</h3>
 
             <ul className="flex flex-col gap-16">
@@ -36,7 +36,7 @@ export default function footer() {
             </ul>
           </div>
 
-          <div className="flex flex-col gap-24 items-center">
+          <div className="flex flex-col gap-24 sm:items-center">
             <h3 className="text-sm-bold">Desenvolvido por Alura</h3>
 
             <div>
@@ -44,9 +44,17 @@ export default function footer() {
             </div>
 
             <div className="flex gap-24">
-              <InstagramIcon className="h-[30px] w-auto text-white" />
-              <WhatsappIcon className="h-[30px] w-auto text-white" />
-              <YoutubeIcon className="h-[30px] w-auto text-white" />
+              <a href="/instagram">
+                <InstagramIcon className="h-[30px] w-auto text-white" />
+              </a>
+
+              <a href="/whatsapp">
+                <WhatsappIcon className="h-[30px] w-auto text-white" />
+              </a>
+
+              <a href="/youtube">
+                <YoutubeIcon className="h-[30px] w-auto text-white" />
+              </a>
             </div>
           </div>
         </div>

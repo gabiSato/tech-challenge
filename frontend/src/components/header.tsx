@@ -10,11 +10,18 @@ import AvatarIcon from "../../public/icons/avatar.svg";
 export default function Header() {
   const { user } = useUserAccount();
 
+  const links = [
+    { path: "/", label: "Início" },
+    { path: "/transferencias", label: "Transferências" },
+    { path: "/investimentos", label: "Investimentos" },
+    { path: "/outros-servicos", label: "Outros serviços" },
+  ];
+
   return (
     <div className="bg-cyan-300">
       <Container className="h-[96px] flex justify-between items-center">
         <div>
-          <NavigationMenu />
+          <NavigationMenu variant="light" menuItens={links} />
         </div>
 
         <div className="flex gap-40 items-center">
