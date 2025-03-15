@@ -1,5 +1,6 @@
 import Container from "@/components/container";
 import NavigationMenu from "./navigation-menu";
+import Button from "@/components/button";
 
 import LogoImage from "../../public/images/logo.svg";
 import LogoCompactImage from "../../public/images/logo-compact.svg";
@@ -31,13 +32,13 @@ export default function HomeHeader() {
         </div>
 
         <div className="hidden sm:flex sm:gap-16 lg:gap-24">
-          <button className="bg-green-200 w-[144px] lg:w-[180px] h-48 rounded cursor-pointer text-sm-semibold text-white">
+          <Button className="lg:w-[180px]" variant="green-primary">
             Abrir conta
-          </button>
+          </Button>
 
-          <button className="w-[144px] lg:w-[180px] h-48 rounded border-2 border-border-green-200 cursor-pointer text-sm-semibold text-green-200">
+          <Button className="lg:w-[180px]" variant="green-secondary">
             Já tenho conta
-          </button>
+          </Button>
         </div>
       </Container>
     </div>

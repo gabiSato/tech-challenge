@@ -71,7 +71,12 @@ export default function TransactionForm({
         />
       </div>
 
-      <Button type="submit" loading={isSubmitting} onClick={submit}>
+      <Button
+        className="sm:w-[250px]"
+        type="submit"
+        loading={isSubmitting}
+        onClick={submit}
+      >
         {transaction ? "Atualizar transação" : "Concluir transação"}
       </Button>
     </form>

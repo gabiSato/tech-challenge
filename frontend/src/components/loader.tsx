@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-export type LoaderColor = "cyan" | "orange" | "green";
+export type LoaderColor = "cyan" | "orange" | "green" | "black" | "white";
 
 interface LoaderProps {
   className?: string;
@@ -17,6 +17,8 @@ export default function Loader({
     cyan: "border-cyan-100 border-t-cyan-300",
     orange: "border-orange-100 border-t-orange-200",
     green: "border-green-100 border-t-green-200",
+    black: "border-neutral-600 border-t-black",
+    white: "border-neutral-300 border-t-white",
   };
 
   return (

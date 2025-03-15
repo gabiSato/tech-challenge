@@ -1,3 +1,5 @@
+import Button from "@/components/button";
+
 import HeroImage from "../../public/images/investment.svg";
 
 export default function HomeHero() {
@@ -12,12 +14,9 @@ export default function HomeHero() {
         <HeroImage className="w-full lg:w-[662px]" />
 
         <div className="flex gap-24 sm:hidden">
-          <button className="w-[144px] h-48 rounded bg-black text-sm-semibold text-white">
-            Abrir conta
-          </button>
-          <button className="w-[144px] h-48px rounded border-2 border-black text-sm-semibold">
-            Já tenho conta
-          </button>
+          <Button variant="black-primary">Abrir conta</Button>
+
+          <Button variant="black-secondary">Já tenho conta</Button>
         </div>
       </div>
     </section>

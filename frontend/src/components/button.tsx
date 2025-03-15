@@ -9,7 +9,9 @@ type ButtonVariant =
   | "orange-primary"
   | "orange-secondary"
   | "green-primary"
-  | "green-secondary";
+  | "green-secondary"
+  | "black-primary"
+  | "black-secondary";
 
 interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
   loading?: boolean;
@@ -52,12 +54,20 @@ export default function Button({
         class: "text-green-200 border-2 border-green-200",
         loaderColor: "green",
       },
+      "black-primary": {
+        class: "bg-black text-white",
+        loaderColor: "white",
+      },
+      "black-secondary": {
+        class: "text-black border-2 border-black",
+        loaderColor: "black",
+      },
     };
 
   return (
     <button
       className={clsx(
-        "w-[144px] sm:w-[250px] h-48 px-12 rounded-lg text-sm-semibold hover:opacity-80",
+        "w-[144px] h-48 px-12 rounded-lg text-sm-semibold hover:opacity-80 cursor-pointer",
         variants[variant].class,
         loading && "flex items-center justify-center",
         className
