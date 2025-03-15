@@ -42,16 +42,16 @@ export default function Wellcome({ user, account }: WellcomeProps) {
         </div>
 
         <div className="flex flex-col gap-16 w-[180px] sm:translate-y-2/4">
-          <div className="flex gap-24 items-center pb-6 border-b-2 border-b-white lg:border-b-orange-100">
+          <div className="flex gap-24 items-center pb-6 border-b-2 border-b-white lg:border-b-orange-200">
             <Text as="h2" size="lg" color="white" weight="semibold">
               Saldo
             </Text>
 
             <button onClick={toggleBalanceVisibility}>
               {showBalance ? (
-                <EyeIcon className="text-white w-20 h-20 lg:text-orange-100" />
+                <EyeIcon className="text-white w-20 h-20 lg:text-orange-200" />
               ) : (
-                <EyeClosedIcon className="text-white w-20 h-20 lg:text-orange-100" />
+                <EyeClosedIcon className="text-white w-20 h-20 lg:text-orange-200" />
               )}
             </button>
           </div>

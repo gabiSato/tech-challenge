@@ -24,10 +24,10 @@ export default function NavigationMenu({
 
   const variants = {
     light: {
-      toggle: "text-orange-100",
+      toggle: "text-orange-200",
       background: "bg-green-100",
       linkActive: "border-b-green-200",
-      linkActiveText: "orange-100",
+      linkActiveText: "orange-200",
       linkInactive: "black",
       separator: "border-b-black",
     },

@@ -13,6 +13,7 @@ const colors: TextColor[] = [
   "neutral-500",
   "neutral-600",
   "orange-100",
+  "orange-200",
   "green-100",
   "green-200",
   "cyan-100",

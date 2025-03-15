@@ -29,7 +29,7 @@ export default function Header() {
             {user?.name}
           </Text>
 
-          <AvatarIcon className="text-orange-100 w-40 h-40" />
+          <AvatarIcon className="text-orange-200 w-40 h-40" />
         </div>
       </Container>
     </div>

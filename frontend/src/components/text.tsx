@@ -12,6 +12,7 @@ export type TextColor =
   | "neutral-500"
   | "neutral-600"
   | "orange-100"
+  | "orange-200"
   | "green-100"
   | "green-200"
   | "cyan-100"
@@ -58,6 +59,7 @@ export default function Text<C extends React.ElementType>({
     "neutral-500": "text-neutral-500",
     "neutral-600": "text-neutral-600",
     "orange-100": "text-orange-100",
+    "orange-200": "text-orange-200",
     "green-100": "text-green-100",
     "green-200": "text-green-200",
     "cyan-100": "text-cyan-100",

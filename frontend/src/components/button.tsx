@@ -1,34 +1,75 @@
 "use client";
 
 import clsx from "clsx";
-import Loader from "./loader";
+import Loader, { LoaderColor } from "./loader";
+
+type ButtonVariant =
+  | "cyan-primary"
+  | "cyan-secondary"
+  | "orange-primary"
+  | "orange-secondary"
+  | "green-primary"
+  | "green-secondary";
 
 interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
   loading?: boolean;
   children: React.ReactNode;
-  variant?: "primary" | "secondary";
+  variant?: ButtonVariant;
+  className?: string;
 }
 
 export default function Button({
   children,
   loading,
-  variant = "primary",
+  variant = "cyan-primary",
   type = "button",
+  className,
   ...props
 }: ButtonProps) {
+  const variants: Record<string, { class: string; loaderColor: LoaderColor }> =
+    {
+      "cyan-primary": {
+        class: "bg-cyan-300 text-white",
+        loaderColor: "cyan",
+      },
+      "cyan-secondary": {
+        class: "bg-cyan-100 text-cyan-200",
+        loaderColor: "cyan",
+      },
+      "orange-primary": {
+        class: "bg-orange-200 text-white",
+        loaderColor: "orange",
+      },
+      "orange-secondary": {
+        class: "text-orange-200 border-2 border-orange-200",
+        loaderColor: "orange",
+      },
+      "green-primary": {
+        class: "bg-green-200 text-white",
+        loaderColor: "green",
+      },
+      "green-secondary": {
+        class: "text-green-200 border-2 border-green-200",
+        loaderColor: "green",
+      },
+    };
+
   return (
     <button
       className={clsx(
-        "w-[144px] sm:w-[250px] h-48 px-12  rounded-lg text-sm  font-semibold hover:opacity-80",
-        variant === "primary"
-          ? "bg-cyan-300 text-white"
-          : "bg-cyan-100 text-cyan-200",
-        loading && "flex items-center justify-center"
+        "w-[144px] sm:w-[250px] h-48 px-12 rounded-lg text-sm-semibold hover:opacity-80",
+        variants[variant].class,
+        loading && "flex items-center justify-center",
+        className
       )}
       type={type}
       {...props}
     >
-      {loading ? <Loader size="small" /> : children}
+      {loading ? (
+        <Loader size="small" color={variants[variant].loaderColor} />
+      ) : (
+        children
+      )}
     </button>
   );
 }
