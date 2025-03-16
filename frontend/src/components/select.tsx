@@ -2,7 +2,7 @@
 import { useState } from "react";
 import clsx from "clsx";
 
-import ArrowIcon from "../../public/icons/dropdown-arrow.svg";
+import ArrowIcon from "@@/public/icons/dropdown-arrow.svg";
 
 import Text from "@/components/text";
 

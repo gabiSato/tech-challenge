@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
 
-import pixels3Image from "../../public/images/pixels-3.png";
-import pixels4Image from "../../public/images/pixels-4.png";
-import womanWithCardImage from "../../public/images/woman-with-card.png";
+import pixels3Image from "@@/public/images/pixels-3.png";
+import pixels4Image from "@@/public/images/pixels-4.png";
+import womanWithCardImage from "@@/public/images/woman-with-card.png";
 
 type TransactionCardProps = {
   children: React.ReactNode;

@@ -1,8 +1,8 @@
 "use client";
-import React, { useEffect, useState } from "react";
-
-import CloseIcon from "../../public/icons/close.svg";
+import React, { useEffect } from "react";
 import clsx from "clsx";
+
+import CloseIcon from "@@/public/icons/close.svg";
 
 interface ModalProps {
   open?: boolean;

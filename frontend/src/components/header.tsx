@@ -5,7 +5,7 @@ import Text from "@/components/text";
 
 import { useUserAccount } from "@/hooks/useUserAccount";
 
-import AvatarIcon from "../../public/icons/avatar.svg";
+import AvatarIcon from "@@/public/icons/avatar.svg";
 
 export default function Header() {
   const { user } = useUserAccount();

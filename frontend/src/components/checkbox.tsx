@@ -1,5 +1,6 @@
 import clsx from "clsx";
-import CheckIcon from "../../public/icons/check.svg";
+
+import CheckIcon from "@@/public/icons/check.svg";
 
 interface CheckboxProps {
   label?: string;

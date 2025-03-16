@@ -7,8 +7,8 @@ import { Transaction } from "@/types/Transaction";
 
 import Text from "@/components/text";
 
-import PencilIcon from "../../public/icons/pencil.svg";
-import TrashIcon from "../../public/icons/trash.svg";
+import PencilIcon from "@@/public/icons/pencil.svg";
+import TrashIcon from "@@/public/icons/trash.svg";
 
 export default function TransactionDetail({
   transaction,

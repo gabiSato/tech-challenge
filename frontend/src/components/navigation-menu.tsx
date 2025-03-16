@@ -5,8 +5,8 @@ import clsx from "clsx";
 import CustomLink from "@/components/custom-link";
 import type { TextColor } from "./text";
 
-import MenuIcon from "../../public/icons/menu.svg";
-import CloseIcon from "../../public/icons/close.svg";
+import MenuIcon from "@@/public/icons/menu.svg";
+import CloseIcon from "@@/public/icons/close.svg";
 
 interface NavigationMenuProps {
   variant?: "light" | "dark";

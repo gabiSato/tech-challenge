@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
 
-import pixels1Image from "../../public/images/pixels-1.png";
-import pixels2Image from "../../public/images/pixels-2.png";
-import manWithSafeImage from "../../public/images/man-with-safe.png";
+import pixels1Image from "@@/public/images/pixels-1.png";
+import pixels2Image from "@@/public/images/pixels-2.png";
+import manWithSafeImage from "@@/public/images/man-with-safe.png";
 
 interface WellcomeCardProps {
   children: React.ReactNode;
