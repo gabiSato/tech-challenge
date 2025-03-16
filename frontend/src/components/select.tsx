@@ -15,6 +15,8 @@ type SelectProps<TValue extends string | number> = {
     label: string;
   }[];
   className?: string;
+  invalid?: boolean;
+  error?: string;
 };
 
 export default function Select<TValue extends string | number>({
@@ -23,6 +25,8 @@ export default function Select<TValue extends string | number>({
   placeholder = "",
   options = [],
   className,
+  invalid,
+  error,
 }: SelectProps<TValue>) {
   const [open, setOpen] = useState(false);
 
@@ -36,7 +40,10 @@ export default function Select<TValue extends string | number>({
   return (
     <div className={clsx("relative", className)}>
       <button
-        className="w-full relative h-48 px-8 md:px-16 bg-white border border-cyan-300 rounded z-1 flex items-center gap-16 justify-between"
+        className={clsx(
+          "w-full relative h-48 px-8 md:px-16 bg-white border border-cyan-300 rounded z-1 flex items-center gap-16 justify-between",
+          invalid && "border-red-100"
+        )}
         role="combobox"
         aria-controls="select-content"
         aria-expanded={open}
@@ -53,6 +60,10 @@ export default function Select<TValue extends string | number>({
           className="w-12 text-cyan-300 data-[state=open]:rotate-180 transition-transform ease-linear duration-200"
         />
       </button>
+
+      {invalid && error && (
+        <span className="text-xs text-red-100 mt-8">{error}</span>
+      )}
 
       <div
         id="select-content"

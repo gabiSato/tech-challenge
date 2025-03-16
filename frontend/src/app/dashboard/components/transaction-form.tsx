@@ -9,6 +9,7 @@ import Select from "@/components/select";
 import Input from "@/components/input";
 import Button from "@/components/button";
 import Text from "@/components/text";
+import { error } from "console";
 
 interface TransactionFormProps {
   transaction?: Transaction;
@@ -25,21 +26,25 @@ export default function TransactionForm({
     transactionType,
     transactionOptions,
     amount,
+    errors,
     handleAmountChange,
     handleTransactionTypeChange,
     generateDataForSubmission,
     reset,
+    validateFields,
   } = useTransactionForm(transaction);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const submit = (event: FormEvent) => {
+  const submit = async (event: FormEvent) => {
     event.preventDefault();
 
-    const data = generateDataForSubmission();
+    const valid = await validateFields();
 
-    if (data) {
+    if (valid) {
+      const data = generateDataForSubmission();
+
       setIsSubmitting(true);
-      onSubmit(data)
+      onSubmit(data!)
         .then(() => shouldReset && reset())
         .finally(() => setIsSubmitting(false));
     }
@@ -55,6 +60,8 @@ export default function TransactionForm({
         placeholder="Selecione o tipo de transação"
         value={transactionType}
         options={transactionOptions}
+        invalid={!!errors.transactionType?.length}
+        error={errors.transactionType?.[0]}
         onChange={handleTransactionTypeChange}
       />
 
@@ -66,7 +73,14 @@ export default function TransactionForm({
         <CurrencyInput
           value={amount}
           onChangeValue={handleAmountChange}
-          InputElement={<Input className="text-center" placeholder="00,00" />}
+          InputElement={
+            <Input
+              className="text-center"
+              placeholder="00,00"
+              invalid={!!errors.amount?.length}
+              error={errors.amount?.[0]}
+            />
+          }
           hideSymbol
         />
       </div>
