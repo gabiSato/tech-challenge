@@ -1,9 +1,9 @@
-import FeatureCard from "@/components/feature-card";
+import FeatureCard from "@/app/home/components/feature-card";
 
-import PresentImage from "../../public/images/present.svg";
-import WithdrawalImage from "../../public/images/withdrawal.svg";
-import StarImage from "../../public/images/star.svg";
-import MultiplatformImage from "../../public/images/multiplatform.svg";
+import PresentImage from "@@/public/images/present.svg";
+import WithdrawalImage from "@@/public/images/withdrawal.svg";
+import StarImage from "@@/public/images/star.svg";
+import MultiplatformImage from "@@/public/images/multiplatform.svg";
 
 export default function HomeFeatures() {
   return (

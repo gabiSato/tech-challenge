@@ -1,6 +1,6 @@
 import Button from "@/components/button";
 
-import HeroImage from "../../public/images/investment.svg";
+import HeroImage from "@@/public/images/investment.svg";
 
 export default function HomeHero() {
   return (

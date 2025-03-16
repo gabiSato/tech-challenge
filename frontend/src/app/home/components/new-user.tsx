@@ -1,8 +1,8 @@
 "use client";
-import NewUserForm from "@/components/new-user-form";
-import UserModal from "@/components/user-modal";
+import NewUserForm from "@/app/home/components/new-user-form";
+import UserModal from "@/app/home/components/user-modal";
 
-import UserAccountImage from "../../public/images/user-account.svg";
+import UserAccountImage from "@@/public/images/user-account.svg";
 
 export default function NewUser() {
   return (

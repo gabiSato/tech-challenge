@@ -40,6 +40,13 @@ export default function UserAuthenticationForm() {
             value={password}
             onChange={handlePasswordChange}
           />
+
+          <a
+            href="/redefinir-senha"
+            className="text-sm text-green-200 underline underline-offset-2"
+          >
+            Esqueci a senha!
+          </a>
         </div>
       </div>
 

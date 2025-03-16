@@ -13,8 +13,8 @@ export default async function Template({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const user = await getUserAccount("joana@gmail.com");
-
+  // const user = await getUserAccount("joana@gmail.com");
+  const user = {};
   return (
     <UserAccountProvider userData={user}>
       <Header />

@@ -5,11 +5,11 @@ import { formatDate, formatToCurrency } from "@/lib/formatters";
 import { Account } from "@/types/Account";
 import { User } from "@/types/User";
 
-import WellcomeCard from "@/components/wellcome-card";
+import WellcomeCard from "@/app/dashboard/components/wellcome-card";
 import Text from "@/components/text";
 
-import EyeIcon from "../../public/icons/eye.svg";
-import EyeClosedIcon from "../../public/icons/eye-closed.svg";
+import EyeIcon from "@@/public/icons/eye.svg";
+import EyeClosedIcon from "@@/public/icons/eye-closed.svg";
 
 interface WellcomeProps {
   user: User;

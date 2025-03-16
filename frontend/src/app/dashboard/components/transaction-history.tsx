@@ -1,7 +1,7 @@
 "use client";
 import Text from "@/components/text";
 
-import TransactionList from "@/components/transaction-list";
+import TransactionList from "@/app/dashboard/components/transaction-list";
 
 export default function TransactionHistory() {
   return (

@@ -1,9 +1,9 @@
-import Container from "./container";
+import Container from "@/components/container";
 
-import LogoImage from "../../public/images/logo.svg";
-import InstagramIcon from "../../public/icons/instagram.svg";
-import WhatsappIcon from "../../public/icons/whatsapp.svg";
-import YoutubeIcon from "../../public/icons/youtube.svg";
+import LogoImage from "@@/public/images/logo.svg";
+import InstagramIcon from "@@/public/icons/instagram.svg";
+import WhatsappIcon from "@@/public/icons/whatsapp.svg";
+import YoutubeIcon from "@@/public/icons/youtube.svg";
 
 export default function footer() {
   return (

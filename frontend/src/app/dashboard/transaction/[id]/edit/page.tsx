@@ -1,6 +1,6 @@
 import { getTransaction } from "@/actions";
 
-import UpdateTransaction from "@/components/update-transaction";
+import UpdateTransaction from "@/app/dashboard/components/update-transaction";
 
 export default async function Page({
   params,

@@ -38,9 +38,15 @@ export const UserAccountProvider = ({
     }
   }, [userData]);
 
-  useEffect(() => {
-    console.log("context", transactions);
-  }, [transactions]);
+  // async function getUserAccount() {
+  //   const data = await fetch("http://localhost:3001/transactions");
+  //   const transactionsData = await data.json();
+  //   setTransactions(transactionsData);
+  // }
+
+  // useEffect(() => {
+  //   getUserAccount();
+  // }, []);
 
   return (
     <UserAccountContext.Provider

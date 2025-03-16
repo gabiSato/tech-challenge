@@ -1,5 +1,6 @@
 import { getTransaction } from "@/actions";
-import TransactionDetail from "@/components/transaction-detail";
+
+import TransactionDetail from "@/app/dashboard/components/transaction-detail";
 
 export default async function Page({
   params,

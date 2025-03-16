@@ -1,8 +1,8 @@
 "use client";
 import { useTransaction } from "@/hooks/useTransaction";
 
-import TransactionCard from "@/components/transaction-card";
-import TransactionForm from "@/components/transaction-form";
+import TransactionCard from "@/app/dashboard/components/transaction-card";
+import TransactionForm from "@/app/dashboard/components/transaction-form";
 import Text from "@/components/text";
 
 export default function NewTransaction() {

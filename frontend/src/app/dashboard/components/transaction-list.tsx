@@ -5,7 +5,7 @@ import { useUserAccount } from "@/hooks/useUserAccount";
 import { Transaction } from "@/types/Transaction";
 import { formatDate } from "@/lib/formatters";
 
-import TransactionListItem from "@/components/transaction-list-item";
+import TransactionListItem from "@/app/dashboard/components/transaction-list-item";
 import Text from "@/components/text";
 
 export default function TransactionList() {

@@ -6,7 +6,7 @@ import {
   TransactionType,
   TransactionTypeDisplay,
 } from './transaction.schema';
-import { CreateTransactionDto } from './dto/create-transaction.dto';
+import { TransactionDto } from './dto/transaction.dto';
 import { User } from '../user/user.schema';
 
 @Injectable()
@@ -18,10 +18,10 @@ export class TransactionService {
 
   async create(
     userId: string | Types.ObjectId,
-    createTransactionDto: CreateTransactionDto,
+    transactionDto: TransactionDto,
   ): Promise<Transaction> {
-    let { value } = createTransactionDto;
-    const { type } = createTransactionDto;
+    let { value } = transactionDto;
+    const { type } = transactionDto;
 
     if (
       type === TransactionType.WITHDRAWAL ||
@@ -43,7 +43,26 @@ export class TransactionService {
 
   async findByUser(userId: string | Types.ObjectId): Promise<Transaction[]> {
     userId = this.parseUserId(userId);
+    // filters
+    // type, date
     return this.transactionModel.find({ user: userId }).exec();
+  }
+
+  async findById(id: string): Promise<Transaction> {
+    return this.transactionModel.findById(id).exec();
+  }
+
+  async update(
+    id: string,
+    transactionDto: TransactionDto,
+  ): Promise<Transaction> {
+    return this.transactionModel
+      .findByIdAndUpdate(id, transactionDto, { new: true })
+      .exec();
+  }
+
+  async delete(id: string): Promise<Transaction> {
+    return this.transactionModel.findByIdAndDelete(id).exec();
   }
 
   private parseUserId(userId: string | Types.ObjectId) {

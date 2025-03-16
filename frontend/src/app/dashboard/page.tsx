@@ -1,8 +1,10 @@
 "use client";
 import Loader from "@/components/loader";
-import NewTransaction from "@/components/new-transaction";
-import TransactionHistory from "@/components/transaction-history";
-import Wellcome from "@/components/wellcome";
+
+import NewTransaction from "@/app/dashboard/components/new-transaction";
+import TransactionHistory from "@/app/dashboard/components/transaction-history";
+import Wellcome from "@/app/dashboard/components/wellcome";
+
 import { useUserAccount } from "@/hooks/useUserAccount";
 
 export default function Page() {

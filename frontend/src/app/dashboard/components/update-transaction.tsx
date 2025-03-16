@@ -2,7 +2,7 @@
 import { Transaction, TransactionFormData } from "@/types/Transaction";
 import { useTransaction } from "@/hooks/useTransaction";
 
-import TransactionForm from "@/components/transaction-form";
+import TransactionForm from "@/app/dashboard/components/transaction-form";
 import Text from "@/components/text";
 
 export default function UpdateTransaction({

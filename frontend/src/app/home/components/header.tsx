@@ -1,11 +1,11 @@
+import NavigationMenu from "@/components/navigation-menu";
 import Container from "@/components/container";
-import NavigationMenu from "./navigation-menu";
 import Button from "@/components/button";
 
-import LogoImage from "../../public/images/logo.svg";
-import LogoCompactImage from "../../public/images/logo-compact.svg";
+import LogoImage from "@@/public/images/logo.svg";
+import LogoCompactImage from "@@/public/images/logo-compact.svg";
 
-export default function HomeHeader() {
+export default function Header() {
   const links = [
     { path: "/sobre", label: "Sobre" },
     { path: "/servicos", label: "Serviços" },

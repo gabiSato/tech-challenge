@@ -1,15 +1,15 @@
 "use client";
 import React, { useState } from "react";
+import clsx from "clsx";
 
 import Modal from "@/components/modal";
-import clsx from "clsx";
 
 interface UserModalProps {
   children: React.ReactNode;
 }
 
 function UserModal({ children }: UserModalProps) {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   return (
     <Modal open={open} onOpenChange={setOpen}>
