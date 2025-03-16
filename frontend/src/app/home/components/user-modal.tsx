@@ -5,15 +5,15 @@ import clsx from "clsx";
 import Modal from "@/components/modal";
 
 interface UserModalProps {
+  open?: boolean;
+  onOpenChange: (open: boolean) => void;
   children: React.ReactNode;
 }
 
-function UserModal({ children }: UserModalProps) {
-  const [open, setOpen] = useState(false);
-
+function UserModal({ open, onOpenChange, children }: UserModalProps) {
   return (
-    <Modal open={open} onOpenChange={setOpen}>
-      <div className="h-dvh w-screen pt-56 px-16 pb-16 sm:max-w-[597px] sm:pt-32 lg:max-w-[792px]">
+    <Modal open={open} onOpenChange={onOpenChange}>
+      <div className="min-h-dvh w-screen pt-56 px-16 pb-16 sm:max-w-[597px] sm:pt-32 lg:max-w-[792px]">
         <div className="flex flex-col gap-32 mx-auto sm:w-[445px] lg:w-[590px]">
           {children}
         </div>

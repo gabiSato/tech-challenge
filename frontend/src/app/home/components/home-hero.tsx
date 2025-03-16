@@ -1,6 +1,8 @@
 import Button from "@/components/button";
 
 import HeroImage from "@@/public/images/investment.svg";
+import NewUserModal from "./new-user-modal";
+import UserAuthenticationModal from "./user-authentication-modal";
 
 export default function HomeHero() {
   return (
@@ -14,9 +16,9 @@ export default function HomeHero() {
         <HeroImage className="w-full lg:w-[662px]" />
 
         <div className="flex gap-24 sm:hidden">
-          <Button variant="black-primary">Abrir conta</Button>
+          <UserAuthenticationModal triggerButtonVariant="black-primary" />
 
-          <Button variant="black-secondary">Já tenho conta</Button>
+          <NewUserModal triggerButtonVariant="black-secondary" />
         </div>
       </div>
     </section>

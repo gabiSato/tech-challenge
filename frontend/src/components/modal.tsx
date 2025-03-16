@@ -5,7 +5,7 @@ import CloseIcon from "../../public/icons/close.svg";
 import clsx from "clsx";
 
 interface ModalProps {
-  open: boolean;
+  open?: boolean;
   onOpenChange: (open: boolean) => void;
   children: React.ReactNode;
 }
@@ -31,7 +31,7 @@ export default function Modal({ open, onOpenChange, children }: ModalProps) {
     >
       <div className="fixed inset-0 bg-black/60" onClick={closeModal}></div>
 
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white min-w-[400px] min-h-48 overflow-y-auto">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white min-w-[400px] min-h-48 max-h-dvh overflow-y-auto">
         <button
           className="absolute top-16 right-16 cursor-pointer"
           onClick={closeModal}

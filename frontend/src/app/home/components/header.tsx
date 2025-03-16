@@ -1,9 +1,11 @@
+"use client";
 import NavigationMenu from "@/components/navigation-menu";
 import Container from "@/components/container";
-import Button from "@/components/button";
 
 import LogoImage from "@@/public/images/logo.svg";
 import LogoCompactImage from "@@/public/images/logo-compact.svg";
+import UserAuthenticationModal from "./user-authentication-modal";
+import NewUserModal from "./new-user-modal";
 
 export default function Header() {
   const links = [
@@ -32,13 +34,9 @@ export default function Header() {
         </div>
 
         <div className="hidden sm:flex sm:gap-16 lg:gap-24">
-          <Button className="lg:w-[180px]" variant="green-primary">
-            Abrir conta
-          </Button>
+          <NewUserModal />
 
-          <Button className="lg:w-[180px]" variant="green-secondary">
-            Já tenho conta
-          </Button>
+          <UserAuthenticationModal />
         </div>
       </Container>
     </div>

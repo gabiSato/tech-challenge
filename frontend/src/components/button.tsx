@@ -3,7 +3,7 @@
 import clsx from "clsx";
 import Loader, { LoaderColor } from "./loader";
 
-type ButtonVariant =
+export type ButtonVariant =
   | "cyan-primary"
   | "cyan-secondary"
   | "orange-primary"
